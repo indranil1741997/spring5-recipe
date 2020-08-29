@@ -30,6 +30,9 @@ public class RecipeToRecipeCommand implements Converter<Recipe, RecipeCommand> {
     @Override
     public RecipeCommand convert(Recipe source) {
 
+        if (source == null)
+            return null;
+
         final RecipeCommand command = new RecipeCommand();
         command.setId(source.getId());
         command.setCookTime(source.getCookTime());
